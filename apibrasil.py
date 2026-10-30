@@ -20,7 +20,7 @@ def consultar_cep(cep):
     if resposta.status_code == 404:
         return jsonify({"erro": "CEP não encontrado"}), 404
     elif resposta.status_code != 200:
-        return jsonify({"erro": "Falha ao consultar a BrasilAPI"}), 502
+        return jsonify({"erro": "Falha ao consultar a API"}), 502
 
     return jsonify(resposta.json())
 
@@ -36,7 +36,7 @@ def consultar_cnpj(cnpj):
     if resposta.status_code == 404:
         return jsonify({"erro": "CNPJ não encontrado"}), 404
     elif resposta.status_code != 200:
-        return jsonify({"erro": "Falha ao consultar a BrasilAPI"}), 502
+        return jsonify({"erro": "Falha ao consultar a API"}), 502
 
     return jsonify(resposta.json())
 
@@ -49,7 +49,7 @@ def consultar_ddd(ddd):
     if resposta.status_code == 404:
         return jsonify({"erro": "DDD não encontrado"}), 404
     elif resposta.status_code != 200:
-        return jsonify({"erro": "Falha ao consultar a BrasilAPI"}), 502
+        return jsonify({"erro": "Falha ao consultar a API"}), 502
 
     return jsonify(resposta.json())
 
@@ -60,7 +60,7 @@ def listar_bancos():
     resposta = requests.get(f"{URL_BASE}/banks/v1")
     
     if resposta.status_code != 200:
-        return jsonify({"erro": "Falha ao consultar a BrasilAPI"}), 502
+        return jsonify({"erro": "Falha ao consultar a API"}), 502
 
     return jsonify(resposta.json())
 
